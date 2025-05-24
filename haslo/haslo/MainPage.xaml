@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="haslo.MainPage"
+             Title="Dodaj pracownika"
+             BackgroundColor="#B0C4DE">
+
+    <ScrollView>
+        <VerticalStackLayout>
+        <HorizontalStackLayout>
+                <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+                    <Label Text="Imię"/>
+                <Entry x:Name="imie"/>
+
+                <Label Text="Nazwisko"/>
+                <Entry x:Name="nazwisko"/>
+
+                <Label Text="Stanowisko"/>
+                        <Picker 
+                        x:Name="stanowisko">
+                            <Picker.Items>
+                                <x:String>Kierownik</x:String>
+                                <x:String>Starszy programista</x:String>
+                                <x:String>Młodszy programista</x:String>
+                                <x:String>Tester</x:String>
+                            </Picker.Items>
+                        </Picker>
+                </VerticalStackLayout>
+            <VerticalStackLayout HorizontalOptions="End">
+                <Label Text="Ile znaków?"/>
+                    <Entry x:Name="ileZnakow"/>
+                    <Label Text="Małe i wielkie litery"/>
+                    <CheckBox x:Name="wielkieCb"/>
+                    <Label Text="Cyfry"/>
+                    <CheckBox x:Name="cyfryCb"/>
+                    <Label Text="Znaki specjalne"/>
+                    <CheckBox x:Name="specjalneCb"/>
+                    <Button Text="Generuj hasło" 
+                            Clicked="generujHaslo" 
+                            BackgroundColor="#4682B4"/>
+                    
+                </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <Button Text="Zatwierdź"
+                Clicked="zatwierdz"
+                BackgroundColor="#4682B4"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
